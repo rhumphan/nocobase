@@ -1,0 +1,122 @@
+import fileUi from '../extensions/nocobase-file-component-ui/locales/zh-CN.js';
+import type { AppResource } from './en-US.js';
+import systemZhCN from './system/zh-CN.js';
+
+const zhCN: AppResource = {
+  // The template's own copy; see `./en-US.ts`.
+  ...systemZhCN,
+  ...fileUi,
+  navigation: { ...systemZhCN.navigation, leaveRequests: '请假申请' },
+  actions: { ...systemZhCN.actions, signInAgain: '重新登录' },
+  'status.sessionExpired': '会话已结束，请重新登录后继续。',
+  leaveRequests: {
+    title: '请假申请',
+    description: '提交请假并跟进每一次审批。',
+    unknownUser: '未知用户',
+    capNotice: '仅显示最新的 {{count}} 条申请。',
+    daysValue_one: '{{count}} 天',
+    daysValue_other: '{{count}} 天',
+    types: { annual: '年假', sick: '病假', unpaid: '事假（无薪）' },
+    status: {
+      pending: '待审批',
+      approved: '已批准',
+      rejected: '已驳回',
+      cancelled: '已撤销',
+    },
+    fields: {
+      requester: '申请人',
+      leaveType: '请假类型',
+      period: '请假时间',
+      startDate: '开始日期',
+      endDate: '结束日期',
+      days: '天数',
+      reason: '事由',
+      status: '状态',
+      createdAt: '申请时间',
+      decidedBy: '审批人',
+      decidedAt: '审批时间',
+      decisionNote: '审批意见',
+    },
+    filters: {
+      status: '按状态筛选',
+      allStatuses: '全部状态',
+      clear: '清除筛选',
+    },
+    create: {
+      action: '申请请假',
+      title: '申请请假',
+      description: '提交后等待请假审批人处理。',
+      submit: '提交申请',
+      submitting: '正在提交…',
+      success: '请假申请已提交。',
+    },
+    form: {
+      startRequired: '请选择开始日期。',
+      endRequired: '请选择结束日期。',
+      endBeforeStart: '结束日期早于开始日期。',
+      tooLong: '单次申请最多 {{max}} 天。',
+      reasonTooLong: '事由不能超过 {{max}} 个字符。',
+      reasonHint: '选填，审批人可见。',
+      invalid: '请检查此项。',
+      daysPreview_one: '本次申请共 {{count}} 个自然日。',
+      daysPreview_other: '本次申请共 {{count}} 个自然日。',
+    },
+    empty: {
+      title: '暂无请假申请',
+      description: '你有权查看的申请会显示在这里。',
+      noResults: '没有该状态的申请。',
+    },
+    error: {
+      title: '无法加载请假申请',
+      requestFailed: '请求失败，请重试。',
+      forbidden: '你没有执行此操作的权限。',
+      notFound: '该请假申请不存在，或你无权查看。',
+    },
+    detail: {
+      page: '请假申请详情',
+      title: '请假申请 #{{id}}',
+      progress: '流程进度',
+      history: '处理记录',
+      diagramLabel: '请假申请流程',
+      end: '结束',
+      noteHint: '批准时选填，驳回时必填。',
+      noteRequired: '请填写驳回理由。',
+    },
+    transitions: {
+      approve: '批准',
+      reject: '驳回',
+      cancel: '撤销申请',
+    },
+    transitionDone: {
+      approve: '已批准该申请。',
+      reject: '已驳回该申请。',
+      cancel: '已撤销该申请。',
+    },
+    history: {
+      create: '提交申请',
+      approve: '批准',
+      reject: '驳回',
+      cancel: '撤销',
+    },
+    blockers: {
+      ownRequest: '不能审批自己的申请。',
+      requesterOnly: '只有申请人可以撤销该申请。',
+      permissionDenied: '你没有执行此操作的权限。',
+      other: '当前无法执行此操作。',
+    },
+    conflict: '该申请在你打开后已被修改，已为你重新加载，请确认后再操作。',
+    permissions: {
+      section: '请假',
+      resource: '请假申请',
+      collection: '请假申请',
+      mine: '我提交的申请',
+      view: '查看申请',
+      create: '申请请假',
+      cancel: '撤销自己的申请',
+      decide: '批准或驳回申请',
+    },
+    roles: { employee: '员工', approver: '请假审批人' },
+  },
+};
+
+export default zhCN;
